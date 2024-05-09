@@ -5,6 +5,7 @@ import { AllExceptionsFilter } from './lib/AllExceptionFilter';
 import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { config } from './common/config';
+import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -13,8 +14,11 @@ async function bootstrap() {
 
   app.useBodyParser('json');
 
+  
   const httpAdapterHost = app.get(HttpAdapterHost);
   app.useGlobalFilters(new AllExceptionsFilter(httpAdapterHost));
+
+  app.useStaticAssets(join(__dirname, '../', 'upload'));
 
   app.setGlobalPrefix('api');
 
@@ -30,7 +34,7 @@ async function bootstrap() {
     .setTitle('Parking Nestjs')
     .setDescription('this is v1')
     .setVersion('1.1.1')
-    .addTag('Your API Tag park')
+    .addTag('Parking mickroservice')
     .addBearerAuth()
     .build();
 

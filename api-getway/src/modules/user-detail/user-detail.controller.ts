@@ -15,7 +15,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { UserService } from '../user/user.service';
 import { Observable, lastValueFrom } from 'rxjs';
 
-@ApiTags('user-detail.service')
+@ApiTags('user-detail')
 @Controller('user-detail')
 export class UserDetailController {
   constructor(

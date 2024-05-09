@@ -12,6 +12,8 @@ export class UserService implements IUserService {
   constructor(private readonly repository: UserRepository) {}
 
   async findAll(): Promise<ResData<Array<UserEntity>>> {
+    console.log("run");
+    
     const users = await this.repository.findAll();
 
     return new ResData('get all users', 200, users);

@@ -16,7 +16,7 @@ import { UserService } from '../user/user.service';
 import { Observable, lastValueFrom } from 'rxjs';
 import { UserNOtOwnerException } from './exception/park.exception';
 
-@ApiTags('park.service')
+@ApiTags('park')
 @Controller('park')
 export class ParkController {
   constructor(

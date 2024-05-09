@@ -15,7 +15,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { LayerService } from '../layer/layer.service';
 import { Observable, lastValueFrom } from 'rxjs';
 
-@ApiTags('place.service')
+@ApiTags('place')
 @Controller('place')
 export class PlaceController {
   constructor(

@@ -16,12 +16,8 @@ import { ApiTags } from '@nestjs/swagger';
 import { ParkService } from '../park/park.service';
 import { Observable, lastValueFrom } from 'rxjs';
 import { OwnerMustHaveParkIdException } from './exception/user.exception';
-import { RolesGuard } from '../shared/role.guard';
-import { RolesDecorator } from 'src/common/decorators/role.Decorator';
-import { RoleEnum } from 'src/common/enums/enum';
-import { AuthGuard } from '../shared/auth.guard';
 
-@ApiTags('user.service')
+@ApiTags('user')
 @Controller('user')
 export class UserController {
   constructor(
@@ -58,8 +54,8 @@ export class UserController {
     return await this.userService.createOwner(createUserDto);
   }
 
-  @RolesDecorator(RoleEnum.Admin)
-  @UseGuards(AuthGuard, RolesGuard)
+
+  // @Auth(RoleEnum.Admin, RoleEnum.Client, RoleEnum.Owner)
   @Get()
   findAll() {
     return this.userService.findAll();

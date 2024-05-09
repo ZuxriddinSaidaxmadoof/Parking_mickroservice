@@ -24,6 +24,7 @@ export class AuthService {
     const checkPhone: Observable<any> = await this.userService.FindOnePhone({
       phone,
     });
+console.log("dataaa", lastValueFrom(checkPhone));
 
     const check = await lastValueFrom(checkPhone);
 

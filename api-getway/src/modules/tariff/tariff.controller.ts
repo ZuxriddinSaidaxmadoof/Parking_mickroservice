@@ -15,7 +15,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { ParkService } from '../park/park.service';
 import { Observable, lastValueFrom } from 'rxjs';
 
-@ApiTags('tariff.service')
+@ApiTags('tariff')
 @Controller('tariff')
 export class TariffController {
   constructor(

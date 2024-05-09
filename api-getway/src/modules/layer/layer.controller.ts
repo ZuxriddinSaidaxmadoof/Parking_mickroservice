@@ -16,7 +16,7 @@ import { ParkService } from '../park/park.service';
 import { Observable, lastValueFrom } from 'rxjs';
 import { LayerNameOrFloorException } from './exception/layer.exception';
 
-@ApiTags('layer.service')
+@ApiTags('layer')
 @Controller('layer')
 export class LayerController {
   constructor(

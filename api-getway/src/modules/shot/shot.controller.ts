@@ -15,7 +15,7 @@ import { ApiTags } from '@nestjs/swagger';
 // import { UserService } from '../user/user.service';
 // import { Observable, lastValueFrom } from 'rxjs';
 
-@ApiTags('shot.service')
+@ApiTags('shot')
 @Controller('shot')
 export class ShotController {
   constructor(private readonly shotService: ShotService) {}

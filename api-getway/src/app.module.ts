@@ -12,25 +12,28 @@ import { CacheModule } from '@nestjs/cache-manager';
 import { redisStore } from 'cache-manager-redis-yet';
 import { LayerModule } from './modules/layer/layer.module';
 import { AuthModule } from './modules/auth/auth.module';
-// import { FileModule } from './modules/file/file.module';
 import { config } from './common/config';
 import { SharedModule } from './modules/shared/shared.module';
+import { FileModule } from './modules/file/file.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { typeOrmConfig } from './common/config/typeorm.config';
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot(typeOrmConfig),
     CacheModule.registerAsync({
       isGlobal: true,
       useFactory: async () => {
         const store = await redisStore({
           socket: { host: config.redisHost, port: config.redisPort },
-          ttl: 60 * 60 * 1000 /** 1 soat */,
+          ttl: 10 * 1000,
         });
 
         return { store };
       },
     }),
     AuthModule,
-    // FileModule,
+    FileModule,
     UserModule,
     UserDetailModule,
     UserTariffModule,

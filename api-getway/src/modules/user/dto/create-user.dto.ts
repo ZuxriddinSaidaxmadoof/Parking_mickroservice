@@ -15,7 +15,7 @@ const Role = [RoleEnum.Client, RoleEnum.Owner];
 export class CreateUserDto {
   @ApiProperty({
     type: String,
-    example: '+998991853703',
+    example: '+998999999999',
   })
   @IsString()
   @Length(13, 13)
@@ -24,7 +24,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     type: String,
-    example: 'Oxunjon07',
+    example: '1234',
   })
   @IsString()
   @IsNotEmpty()
@@ -47,4 +47,3 @@ export class CreateUserDto {
   parkId: number;
 }
 
-// id, phone, password, role, created_at, last_edited_at, park_id

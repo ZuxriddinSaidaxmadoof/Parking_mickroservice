@@ -12,4 +12,5 @@ export const config: IConfig = {
   jwtExpiredIn: process.env.JWT_EXPIRED_IN,
   redisHost: process.env.REDIS_HOST,
   redisPort: Number(process.env.REDIS_PORT),
+  dbUrl: process.env.DB_URL
 };

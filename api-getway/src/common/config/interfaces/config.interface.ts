@@ -8,4 +8,5 @@ export interface IConfig {
   jwtExpiredIn: string;
   redisHost: string;
   redisPort: number;
+  dbUrl: string;
 }

@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
 import { lastValueFrom } from 'rxjs';
 import { TariffService } from '../tariff/tariff.service';
 
-@ApiTags('service.service')
+@ApiTags('service')
 @Controller('service')
 export class ServiceController {
   constructor(
