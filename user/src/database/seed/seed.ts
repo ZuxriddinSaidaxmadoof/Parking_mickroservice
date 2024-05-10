@@ -26,22 +26,22 @@ import { RoleEnum } from 'src/common/types/enums';
     const tarif = await tarifRepository.find();
     await tarifRepository.remove(tarif);
 
-    const heshPassword1 = await hashed('1234');
+    const hashedPassword = await hashed('1234');
 
-    const dto1 = {
-      phone: '+998901112233',
-      password: heshPassword1,
+    const dto = {
+      phone: '+998999999999',
+      password: hashedPassword,
       parkId: 1,
       role: RoleEnum.Client,
     };
 
-    let user1 = userRepository.create(dto1);
-    user1 = await userRepository.save(user1);
+    let user = userRepository.create(dto);
+    user = await userRepository.save(user);
 
     const heshPassword2 = await hashed('1234');
 
     const dto2 = {
-      phone: '+998912223344',
+      phone: '+998997777777',
       password: heshPassword2,
       parkId: 1,
       role: RoleEnum.Owner,
@@ -53,7 +53,7 @@ import { RoleEnum } from 'src/common/types/enums';
     const heshPassword = await hashed('1234');
 
     const dto3 = {
-      phone: '+998991853703',
+      phone: '+998998888888',
       password: heshPassword,
       parkId: 1,
       role: RoleEnum.Admin,
@@ -77,8 +77,8 @@ import { RoleEnum } from 'src/common/types/enums';
     detail2 = await detailRepository.save(detail2);
 
     let detail3 = detailRepository.create({
-      firstname: 'Oxunjon',
-      lastname: 'Xatamov',
+      firstname: 'Nail',
+      lastname: 'Valid',
       userId: 3,
     });
     detail3 = await detailRepository.save(detail3);
